@@ -1,0 +1,40 @@
+*, *::before, *::after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%; /* makes sure our HTML takes up 100% of the browser window */
+    font-size: 100%;
+}
+
+
+.sidebar {
+    background-color: lightgray;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 25%;
+    height: 100%; 
+}
+
+.page-content {
+    background-color: white;
+    position: fixed;
+    top: 0px;
+    left: 260px;
+    width: 75%;
+    height: 100%; 
+    padding: 10px;
+}
+
+.sidebar .sidebar-header {
+    padding-left: 20px;
+    margin-bottom: 40px;
+}
+
+.sidebar .sidebar-body {
+    padding-left: 20px;
+    margin-bottom: 15px;
+}
