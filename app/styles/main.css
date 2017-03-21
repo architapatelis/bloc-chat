@@ -38,3 +38,9 @@ html {
     padding-left: 20px;
     margin-bottom: 15px;
 }
+
+.sidebar .app-title {
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
