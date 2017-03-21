@@ -44,3 +44,7 @@ html {
     font-weight: 600;
 }
 
+.sidebar-body .room-names {
+    cursor: pointer;
+}
+
