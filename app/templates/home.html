@@ -1,7 +1,10 @@
 <main class="home-page-container">
     <aside class="sidebar">
-        <h2 class="sidebar-header app-title">Bloc Chat</h2>
-        <nav class="sidebar-body room-names" ng-repeat="room in home.rooms"> {{ room.$value }}</nav>
+        <div class="sidebar-header">
+            <h2 class="app-title">Bloc Chat</h2>
+            <button type="button" class="btn btn-info btn-lg" ng-click="home.createRoom()">Create New Room</button>
+        </div>
+        <nav class="sidebar-body room-names" ng-repeat="room in home.rooms"> {{ room.name }}</nav>
     </aside>
 
     <div class="page-content">
