@@ -4,10 +4,17 @@
             <h2 class="app-title">Bloc Chat</h2>
             <button type="button" class="btn btn-info btn-lg" ng-click="home.createRoom()">Create New Room</button>
         </div>
-        <nav class="sidebar-body room-names" ng-repeat="room in home.rooms"> {{ room.name }}</nav>
+        <div class="sidebar-body" ng-repeat="room in home.rooms">
+            <p class="room-names" ng-click="home.setCurrentRoom(room)">{{ room.name }}</p>
+        </div>
     </aside>
 
     <div class="page-content">
-        <p>This is where page content will go.</p>
+        <h3 class="room-name">{{ home.currentRoom.name }}</h3>
+        <div class="messages" ng-repeat="message in home.messages">
+            <div class="username">{{ message.username }}</div>
+            <div class="timestamp">{{ message.sentAt }}</div>
+            <div class="user-message">{{ message.content }}</div>
+        </div>
     </div>
 </main>
