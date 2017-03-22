@@ -1,5 +1,5 @@
 (function(){
-    function ModalCtrl(Room, $uibModalInstance) {
+    function ModalCtrl(Room, $uibModalInstance, $cookies) {
         // if user clicks 'Cancel'
         this.cancel = function() {
             $uibModalInstance.dismiss();
@@ -12,11 +12,21 @@
             Room.add(this.newRoom);
             $uibModalInstance.close();
         };
+        
+        
+        this.createUserName = function() {
+            // put(key, value)
+            // key - a string, id for the value
+            // value - a string, raw value to be stored
+            $cookies.put('blocChatCurrentUser', this.username);
+            $uibModalInstance.close();
+            console.log(this.username);
+        };
     }
     
  
     angular
         .module('blocChat')
-        .controller('ModalCtrl', ['Room', '$uibModalInstance', ModalCtrl]);
+        .controller('ModalCtrl', ['Room', '$uibModalInstance', '$cookies', ModalCtrl]);
 
 })();
