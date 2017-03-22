@@ -1,15 +1,18 @@
 (function(){
     function Message($firebaseArray) {
+        
         var Message = {};
         
         // create a reference to Firebase database
-        // using child() method query messages object
+        // then using child() method query messages object
         var ref = firebase.database().ref().child("messages");
+        
         // create array of messages
         var messages = $firebaseArray(ref);
         
+        //get message object with a specific roomId
         Message.getByRoomId = function(roomId) {
-            return ref.orderByChild('roomId').equalTo(roomId);
+            return $firebaseArray(ref.orderByChild('roomId').equalTo(roomId));
         };
         
         return Message;

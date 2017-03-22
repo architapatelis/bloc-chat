@@ -1,8 +1,11 @@
 (function(){
     function HomeCtrl(Room, Message, $uibModal) {
+        
         this.rooms = Room.all;
+        
         //initially there will be no room shown in the container
         this.currentRoom = null;
+        
         
         this.createRoom = function() {
             $uibModal.open({
@@ -11,10 +14,10 @@
             });
         };
         
+        
         this.setCurrentRoom = function(room) {
             this.currentRoom = room;
-            this.messages = Message.getByRoomId(room.$id);
-            console.log(this.messages);
+            this.messages = Message.getByRoomId(this.currentRoom.$id);
         };
     }
     
