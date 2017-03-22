@@ -1,0 +1,12 @@
+<section class="modal-content">
+    <div class="modal-header">
+        <h3 class="modal-title">Set a username</h3>
+    </div>
+    <div class="modal-body">
+        <h5 class="modal-prompt"><strong>Enter a username:</strong></h5>
+        <input type="text" ng-model="modal.username" required>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-primary btn-block" ng-click="modal.createUserName()" ng-disabled="!modal.username">Set username</button>
+    </div>
+</section>
