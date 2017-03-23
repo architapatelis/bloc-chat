@@ -15,12 +15,11 @@
         
         
         this.createUserName = function() {
-            // put(key, value)
+            // put(key, value) - sets a value for given cookie key/Id
             // key - a string, id for the value
             // value - a string, raw value to be stored
             $cookies.put('blocChatCurrentUser', this.username);
             $uibModalInstance.close();
-            console.log(this.username);
         };
     }
     
