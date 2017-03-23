@@ -2,7 +2,8 @@
 
 (function(){ 
     function BlocChatCookies($cookies, $uibModal) {
-        // get(key) returns the value of given cookie key (key is a string)
+        // get(key) returns the value of given cookie key
+        // key is a string, it's an Id to use for lookup
         var currentUser = $cookies.get('blocChatCurrentUser');
         if (!currentUser || currentUser === '') {
             $uibModal.open({

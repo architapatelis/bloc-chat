@@ -15,6 +15,12 @@
             return $firebaseArray(ref.equalTo(roomId));
         };
         
+        
+        // add newly created message to firebase and also timestamp that message.
+        Message.send = function(newMessage) {
+            messages.$add(newMessage);
+        };
+        
         return Message;
     }
     
