@@ -21,7 +21,7 @@
             });
         };
         
-        
+                
         // invoked by click on Create new room button
         this.setCurrentRoom = function(room) {
             this.currentRoom = room;
@@ -29,13 +29,17 @@
         };
         
         
-        // invoked by click on 'send' button 
+        // invoked by click on 'send' button
         this.sendMessage = function () {
-            this.newMessage.roomId = this.currentRoom.$id;
-            this.newMessage.username = this.currentUser;
-            this.newMessage.sentAt = firebase.database.ServerValue.TIMESTAMP;
-            Message.send(this.newMessage);
-            this.newMessage.content = '';
+            var message = {
+            roomId: this.currentRoom.$id,
+            username: this.currentUser,
+            sentAt: firebase.database.ServerValue.TIMESTAMP,
+            content: this.newMessage
+            };
+            
+            Message.send(message);
+            this.newMessage = '';
         };
         
     }
